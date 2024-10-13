@@ -61,8 +61,8 @@
     top: 50%; /* Centers the hitbox vertically */
     left: 50%; /* Centers the hitbox horizontally */
     transform: translate(-50%, -50%); /* Centers the hitbox within the cone */
-    background-color: rgba(255, 0, 0, 0.3); /* Semi-transparent red background */
-    border: 1px solid red;
+    /* background-color: rgba(255, 0, 0, 0.3); /* Semi-transparent red background */
+    /* border: 1px solid red; */
     z-index: 3; /* Positioned above other elements */
 }
 
