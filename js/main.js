@@ -6,6 +6,31 @@ import { startTimer, stopTimer, resetTimer, saveTime, increaseLevels, resetLevel
 import { initializeParkingSpots, triggerConfetti, updateSpot, checkParkingCompletion, revertParkingSpot } from './randomspot.js';
 
 $(function () {
+    // // Create the base element
+    // var baseElement = $('<base>');
+
+    let basePath = "";
+    // Check if we're running on localhost
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // If on localhost, set the base URL for localhost
+        // baseElement.attr('href', '/');
+        basePath = "/";
+    } else {
+        // If on GitHub Pages or another server, set the base URL for production
+        // baseElement.attr('href', '/cisc474-project1-project-group-8/');
+        basePath = "/cisc474-project1-project-group-8/";
+    }
+
+    // // Append the base element to the <head>
+    // $('head').append(baseElement);
+
+    // Set background-image for #car-explosion
+    $('#car-explosion').css('background-image', "url('" + basePath + "img/gifs/explosion.gif')");
+
+    // Set background-image for #car-confetti
+    $('#car-confetti').css('background-image', "url('" + basePath + "img/gifs/confetti.gif')");
+
+
     // Initial resize of the game window
     resize();
     addResizeEventListener();
@@ -161,7 +186,7 @@ $(function () {
             $("#instructions").hide();
 
             // Display the game background
-            $("#scroll-window").css("background-image", "url(../img/parkinglot.png)");
+            $("#scroll-window").css("background-image", "url(" + basePath + "img/parkinglot.png)");
 
             resetLives(); // Reset player lives
             revertParkingSpot();
@@ -233,7 +258,7 @@ $(function () {
             life.classList.add("game-life");
 
             const lifeImg = document.createElement("img");
-            lifeImg.src = "../img/hud/wrench-screwdriver.png";
+            lifeImg.src = basePath + "img/hud/wrench-screwdriver.png";
             lifeImg.alt = "Life";
             lifeImg.width = 40;
 
@@ -409,7 +434,7 @@ $(function () {
         gamePaused = false; // Unpause the game
         gameState = 'start';
 
-        $("#scroll-window").css("background-image", "url(../img/starter-parkinglot.png)");
+        $("#scroll-window").css("background-image", "url(" + basePath + "img/starter-parkinglot.png)");
         $("#top-left-divider, #top-right-divider, #bottom-right-divider").hide();
         $("#Subtitle").text("Group 8: Aman Singh, Julia O'Neill, Kyle Malice, Solenn Gacon, Suhas Bolledula");
 
@@ -445,7 +470,7 @@ $(function () {
         gameState = 'start';
         lives = 0;
 
-        $("#scroll-window").css("background-image", "url(../img/starter-parkinglot.png)");
+        $("#scroll-window").css("background-image", "url(" + basePath + "img/starter-parkinglot.png)");
         $("#Subtitle").text("Group 8: Aman Singh, Julia O'Neill, Kyle Malice, Solenn Gacon, Suhas Bolledula");
 
         $("#top-left-divider, #top-right-divider, #bottom-right-divider").hide();
