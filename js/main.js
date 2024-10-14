@@ -6,23 +6,8 @@ import { startTimer, stopTimer, resetTimer, saveTime, increaseLevels, resetLevel
 import { initializeParkingSpots, triggerConfetti, updateSpot, checkParkingCompletion, revertParkingSpot } from './randomspot.js';
 
 $(function () {
-    // // Create the base element
-    // var baseElement = $('<base>');
 
     let basePath = "";
-    // Check if we're running on localhost
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        // If on localhost, set the base URL for localhost
-        // baseElement.attr('href', '/');
-        basePath = "/";
-    } else {
-        // If on GitHub Pages or another server, set the base URL for production
-        // baseElement.attr('href', '/cisc474-project1-project-group-8/');
-        basePath = "/cisc474-project1-project-group-8/";
-    }
-
-    // // Append the base element to the <head>
-    // $('head').append(baseElement);
 
     // Set background-image for #car-explosion
     $('#car-explosion').css('background-image', "url('" + basePath + "img/gifs/explosion.gif')");
